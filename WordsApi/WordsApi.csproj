@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B3FE4B8-600A-41D5-96E3-CEA74A837918}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WordsApi</RootNamespace>
+    <AssemblyName>WordsApi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Citation.cs" />
+    <Compile Include="Model\Definition.cs" />
+    <Compile Include="Model\DefinitionSearchResults.cs" />
+    <Compile Include="Model\ExampleUsage.cs" />
+    <Compile Include="Model\Label.cs" />
+    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\Related.cs" />
+    <Compile Include="Model\TextPron.cs" />
+    <Compile Include="Queries\GetWordnikBaseUrlQuery.cs" />
+    <Compile Include="Queries\IGetWordnikBaseUrlQuery.cs" />
+    <Compile Include="Services\ContentProvider.cs" />
+    <Compile Include="Services\ExpandTerms.cs" />
+    <Compile Include="Services\IRandomWordsService.cs" />
+    <Compile Include="Services\GetRandomWordRequest.cs" />
+    <Compile Include="Services\GetRandomWordResponse.cs" />
+    <Compile Include="Services\GetRandomWordsRequest.cs" />
+    <Compile Include="Services\GetRandomWordsResponse.cs" />
+    <Compile Include="Model\PartOfSpeech.cs" />
+    <Compile Include="Model\Extensions\PartOfSpeechExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IReverseDictionaryService.cs" />
+    <Compile Include="Services\IWordOfTheDayService.cs" />
+    <Compile Include="Services\IWordSearchService.cs" />
+    <Compile Include="Services\RandomWordsService.cs" />
+    <Compile Include="Model\Sorting.cs" />
+    <Compile Include="Model\SortOrder.cs" />
+    <Compile Include="Services\Helpers\WordnikUrlHelper.cs" />
+    <Compile Include="Model\WordnikWord.cs" />
+    <Compile Include="Model\WordnikWordList.cs" />
+    <Compile Include="Model\WordResponse.cs" />
+    <Compile Include="Services\ReverseDictionaryRequest.cs" />
+    <Compile Include="Services\ReverseDictionaryService.cs" />
+    <Compile Include="Services\SearchResult.cs" />
+    <Compile Include="Services\SearchResults.cs" />
+    <Compile Include="Services\SimpleDefinition.cs" />
+    <Compile Include="Services\SimpleExample.cs" />
+    <Compile Include="Services\WordOfTheDayRequest.cs" />
+    <Compile Include="Services\WordOfTheDayResponse.cs" />
+    <Compile Include="Services\WordOfTheDayService.cs" />
+    <Compile Include="Services\WordSearchRequest.cs" />
+    <Compile Include="Services\WordSearchService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
